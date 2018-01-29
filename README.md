@@ -5,7 +5,7 @@ SFA-PLSR (Test code) for the following paper:
 Li, Dingquan, Tingting Jiang, and Ming Jiang. "[Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images](https://dl.acm.org/citation.cfm?id=3123266.3123322)." Proceedings of the 2017 ACM on Multimedia Conference. ACM, 2017.
 
 ## Requirement
-Framework: [Caffe](https://github.com/BVLC/caffe/) + [MATLAB](https://www.mathworks.com/products/matlab.html) 2016b Interface
+Framework: [Caffe](https://github.com/BVLC/caffe/) 1.0 + [MATLAB](https://www.mathworks.com/products/matlab.html) 2016b Interface
 
 The PLSR model uesd in the test code is trained on [LIVE](http://live.ece.utexas.edu/research/Quality/subjective.htm) gblur images. 
 
