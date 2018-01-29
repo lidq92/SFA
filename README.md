@@ -2,17 +2,17 @@
 
 ## Description
 SFA-PLSR (Test code) for the following paper:
-Li, Dingquan, Tingting Jiang, and Ming Jiang. "Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images." Proceedings of the 2017 ACM on Multimedia Conference. ACM, 2017.
+Li, Dingquan, Tingting Jiang, and Ming Jiang. "[Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images](https://dl.acm.org/citation.cfm?id=3123266.3123322)." Proceedings of the 2017 ACM on Multimedia Conference. ACM, 2017.
 
 ## Requirement
-Framework: Caffe + MATLAB 2016b Interface
+Framework: [Caffe](https://github.com/BVLC/caffe/) + [MATLAB](https://www.mathworks.com/products/matlab.html) 2016b Interface
 
-The PLSR model uesd in the test code is trained on LIVE gblur images. 
+The PLSR model uesd in the test code is trained on [LIVE](http://live.ece.utexas.edu/research/Quality/subjective.htm) gblur images. 
 
 Download the ResNet-50-model.caffemodel from https://github.com/KaimingHe/deep-residual-networks and paste it into the directory "models/" before using the code!
 
 ## Note for training
-All we need to train is a PLSR model, where the training function is plsregress.m in MATLAB. The features are extracted from the DCNN models pre-trained on the image classification task.
+All we need to train is a PLSR model, where the training function is plsregress.m in [MATLAB](https://www.mathworks.com/products/matlab.html). The features are extracted from the DCNN models pre-trained on the image classification task.
 
 ## Citation
 
@@ -34,4 +34,4 @@ Please cite our paper if it helps your research:
 Dingquan Li, dingquanli@pku.edu.cn.
 
 ## License
-MIT License
+[MIT License](https://opensource.org/licenses/MIT)
