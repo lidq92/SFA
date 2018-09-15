@@ -11,7 +11,7 @@ if ischar(im)
     im = imread(im);
 end
 
-if ~exist(modelName, 'var')
+if ~exist('modelName', 'var')
     modelName = 'SFAtrainedonLIVEforTMM';
 end
 
