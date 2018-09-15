@@ -1,8 +1,11 @@
-# Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images
+# Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](License)
 
 ## Description
-SFA-PLSR (Test code) for the following paper:
-Li, Dingquan, Tingting Jiang, and Ming Jiang. "[Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images](https://dl.acm.org/citation.cfm?id=3123266.3123322)." Proceedings of the 2017 ACM on Multimedia Conference. ACM, 2017.
+SFA code for the following papers:
+
+- Li, Dingquan, Tingting Jiang, Weisi Lin, and Ming Jiang. "[Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?]()." IEEE Transactions on Multimedia, 2018.
+- Li, Dingquan, Tingting Jiang, and Ming Jiang. "[Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images](https://dl.acm.org/citation.cfm?id=3123266.3123322)." Proceedings of the 2017 ACM on Multimedia Conference. ACM, 2017.
 
 ## Requirement
 Framework: [Caffe](https://github.com/BVLC/caffe/) 1.0 + [MATLAB](https://www.mathworks.com/products/matlab.html) 2016b Interface
@@ -14,9 +17,20 @@ Download the ResNet-50-model.caffemodel from https://github.com/KaimingHe/deep-r
 ## Note for training
 All we need to train is a PLSR model, where the training function is plsregress.m in [MATLAB](https://www.mathworks.com/products/matlab.html). The features are extracted from the DCNN models pre-trained on the image classification task.
 
+Update: remember to change the value of "im_dir" and "im_lists" in data info.
+
 ## Citation
 
-Please cite our paper if it helps your research:
+Please cite our papers if it helps your research:
+
+<pre><code>@arcticle{li2018which,
+  title={Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?},
+  author={Li, Dingquan and Jiang, Tingting and Lin, Weisi and Jiang, Ming},
+  booktitle={IEEE Transactions on Multimedia},
+  year={2018}
+}</code></pre>
+
+[[Paper]()] 
 
 <pre><code>@inproceedings{li2017exploiting,
   title={Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images},
@@ -32,6 +46,3 @@ Please cite our paper if it helps your research:
 
 ## Contact
 Dingquan Li, dingquanli@pku.edu.cn.
-
-## License
-[MIT License](https://opensource.org/licenses/MIT)

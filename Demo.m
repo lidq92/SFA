@@ -1,11 +1,11 @@
-% SFA-PLSR Demo
+% SFA Demo
 
 % written by Dingquan Li
 % dingquanli@pku.edu.cn
 % IDM, SMS, PKU
-% Last update: May 17, 2017
+% Last update: Sept. 15, 2018
 
-caffe_path = '/home/ldq/LDQ/Software/caffe/matlab/'; % point to the caffe path
+caffe_path = '/home/ldq/caffe/matlab/'; % point to the caffe path
 addpath(genpath(caffe_path)); 
 
 for i = 1:4

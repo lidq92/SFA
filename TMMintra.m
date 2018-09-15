@@ -2,6 +2,11 @@
 %%%%%     Intra Database Experiments     %%%%%
 %%%%%     SFA (Li et al. TMM 2018)       %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% written by Dingquan Li
+% dingquanli@pku.edu.cn
+% IDM, SMS, PKU
+% Last update: Sept. 15, 2018
+
 clear;clc
 
 caffe_path = '/home/ldq/caffe/matlab/'; % point to the caffe path
