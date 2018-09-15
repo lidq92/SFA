@@ -1,14 +1,21 @@
-function quality = SFA(im)
-% SFA-PLSR 
+function quality = SFA(im, modelName)
+% SFA, TMM 2018
 
+% 
 % written by Dingquan Li
 % dingquanli@pku.edu.cn
 % IDM, SMS, PKU
-% Last update: May 17, 2017
+% Last update: Sept. 15, 2018
 
 if ischar(im)
     im = imread(im);
 end
+
+if ~exist(modelName, 'var')
+    modelName = 'SFAtrainedonLIVEforTMM';
+end
+
+load([fileparts(which(mfilename)) '/models/' modelName]); % parameters in PLSR model
 
 % multi-patch representation
 patchSize = [224 224]; %
@@ -16,7 +23,7 @@ stride = floor(patchSize/2); %
 patches = im2patches(im, patchSize, stride);
 
 % feature extraction
-patch_features = DCNN(patches);
+patch_features = DCNN(patches, bestLayer);
 
 % feature aggregation
 feature_mean = mean(patch_features,2);
@@ -38,19 +45,17 @@ feature3 = [feature_mean; nthroot(feature_Moment2,2);nthroot(feature_Moment3,3);
     nthroot(feature_Moment4,4)]'; % moment aggregation
 
 % quality prediction
-load('models/SFAPLSRtrainedonLIVE'); % parameters in PLSR model, note: trained using plsregress.m in MATLAB
-
 predict1 = [1 feature1] * beta1;
 predict2 = [1 feature2] * beta2;
 predict3 = [1 feature3] * beta3;
-quality = (predict1 + predict2 + predict3)/3; % 
+quality = [predict1 predict2 predict3] * w; % 
 
-function patch_features = DCNN(patches)
+function patch_features = DCNN(patches, bestLayer)
 % Extract high-level semantic features from pool5 of ResNet-50
 
 % Initialize the DCNN
-model = 'models/ResNet-50-deploy.prototxt'; %
-weights = 'models/ResNet-50-model.caffemodel'; %
+model = [fileparts(which(mfilename)) '/models/ResNet-50-deploy.prototxt']; %
+weights = [fileparts(which(mfilename)) '/models/ResNet-50-model.caffemodel']; %
 caffe.set_mode_gpu(); %
 net = caffe.Net(model, weights, 'test');
 
@@ -60,18 +65,19 @@ im_data = permute(im_data,[2 1 3 4]); % HWC2WHC
 im_data = single(im_data); % single
 
 cropped_dim = size(patches,1);
-mean_data = caffe.io.read_mean('models/imagenet_mean.binaryproto'); %
+mean_data = caffe.io.read_mean([fileparts(which(mfilename)) '/models/imagenet_mean.binaryproto']); %
 topleft = floor((size(mean_data,1)-cropped_dim)/2)+1;
 mean_data = mean_data(topleft:topleft+cropped_dim-1,topleft:topleft+cropped_dim-1,:);
 
 crops_data = arrayfun(@(i)im_data(:,:,:,i)-mean_data,1:size(patches,4),'UniformOutput',false);
 
 % Extract features
-l = 2048; %
+l = net.blobs(bestLayer).shape;
+l = l(3); %
 patch_features = zeros(l,length(crops_data));
 for n = 1:length(crops_data)
     net.forward(crops_data(n));
-    patch_features(:,n) = net.blobs('pool5').get_data(); %
+    patch_features(:,n) = mean(reshape(net.blobs(bestLayer).get_data(),[],l,1)); %
 end
 patch_features = double(patch_features);
 
