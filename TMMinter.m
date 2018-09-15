@@ -94,4 +94,4 @@ for r = 1:length(databases)
     Cross.SROCC
     end
 end
-% save('./results/Cross','Cross');
+save('./results/Cross','Cross');
