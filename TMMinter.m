@@ -13,7 +13,7 @@ caffe_path = '/home/ldq/caffe/matlab/'; % point to the caffe path
 addpath(genpath(caffe_path)); 
 
 %%
-databases = {'LIVE','TID2008','TID2013','MLIVE','MLIVEblurjpeg','BID','CLIVE'};
+databases = {'LIVE','TID2008','TID2013','MLIVE1','MLIVE2','BID','CLIVE'};
 for r = 1:length(databases)
     traindatabase = databases{r};
     %%
