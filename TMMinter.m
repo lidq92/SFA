@@ -12,7 +12,7 @@ clear;clc
 caffe_path = '/home/ldq/caffe/matlab/'; % point to the caffe path
 addpath(genpath(caffe_path)); 
 
-%%
+%% Assuming that you have extracted the features and saved related information in corresponding mat files.
 databases = {'LIVE','TID2008','TID2013','MLIVE1','MLIVE2','BID','CLIVE'};
 for r = 1:length(databases)
     traindatabase = databases{r};
