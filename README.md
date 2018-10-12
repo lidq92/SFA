@@ -4,7 +4,7 @@
 ## Description
 SFA code for the following papers:
 
-- Li, Dingquan, Tingting Jiang, Weisi Lin, and Ming Jiang. "[Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?]()." IEEE Transactions on Multimedia, 2018.
+- Li, Dingquan, Tingting Jiang, Weisi Lin, and Ming Jiang. "[Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?](https://ieeexplore.ieee.org/document/8489929)." IEEE Transactions on Multimedia, 2018.
 - Li, Dingquan, Tingting Jiang, and Ming Jiang. "[Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images](https://dl.acm.org/citation.cfm?id=3123266.3123322)." Proceedings of the 2017 ACM on Multimedia Conference. ACM, 2017.
 
 ## Requirement
