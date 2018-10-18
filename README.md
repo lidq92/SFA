@@ -42,7 +42,7 @@ Please cite our papers if it helps your research:
 }</code></pre>
 
 [[Paper](https://www.researchgate.net/profile/Dingquan_Li3/publication/320541334_Exploiting_High-Level_Semantics_for_No-Reference_Image_Quality_Assessment_of_Realistic_Blur_Images/links/5a0c14cba6fdccc69edaa035/Exploiting-High-Level-Semantics-for-No-Reference-Image-Quality-Assessment-of-Realistic-Blur-Images.pdf)] 
-[[Poster](./acmmm17_poster.pdf)]
+[[Poster](./acmmm17_poster-updated.pdf)]
 
 ## Contact
 Dingquan Li, dingquanli@pku.edu.cn.
