@@ -30,7 +30,7 @@ Please cite our papers if it helps your research:
   year={2018}
 }</code></pre>
 
-[[Paper]()] 
+[[Paper](https://ieeexplore.ieee.org/document/8489929)] 
 
 <pre><code>@inproceedings{li2017exploiting,
   title={Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images},
