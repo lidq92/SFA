@@ -19,6 +19,9 @@ load(['data/' database 'info']); % point to data info file, im_dir should be re-
 %     im_lists{i} = [im_dir im_names{i}];
 % end
 % clear i
+if ~exist('results','dir')
+    mkdir('results');
+end
 save_path = ['./results/' database '-reproduce']; % point to save path
 
 %% Feature Extraction
