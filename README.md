@@ -27,7 +27,12 @@ Please cite our papers if it helps your research:
   title={Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?},
   author={Li, Dingquan and Jiang, Tingting and Lin, Weisi and Jiang, Ming},
   booktitle={IEEE Transactions on Multimedia},
-  year={2018}
+  volume={21}, 
+  number={5}, 
+  pages={1221-1234},  
+  month={May},
+  year={2018}, 
+  doi={10.1109/TMM.2018.2875354}
 }</code></pre>
 
 [[Paper](https://ieeexplore.ieee.org/document/8489929)] 
