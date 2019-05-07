@@ -50,4 +50,4 @@ Please cite our papers if it helps your research:
 [[Poster](./acmmm17_poster-updated.pdf)]
 
 ## Contact
-Dingquan Li, dingquanli@pku.edu.cn.
+Dingquan Li, dingquanli AT pku DOT edu DOT cn.
