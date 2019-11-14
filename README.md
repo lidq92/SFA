@@ -14,12 +14,15 @@ The PLSR model uesd in the test code is trained on [LIVE](http://live.ece.utexas
 
 Download the ResNet-50-model.caffemodel from https://github.com/KaimingHe/deep-residual-networks and paste it into the directory "models/" before using the code!
 
-New! We provide the PyTorch implementation of the method in [SFA-pytorch](./SFA-pytorch/)
+**New!** We provide the [PyTorch](https://pytorch.org) implementation of the method in [SFA-pytorch](./SFA-pytorch/)
 
 ## Note for training
-All we need to train is a PLSR model, where the training function is plsregress.m in [MATLAB](https://www.mathworks.com/products/matlab.html). The features are extracted from the DCNN models pre-trained on the image classification task.
+All we need to train is a PLSR model, where the training function is `plsregress` in [MATLAB](https://www.mathworks.com/products/matlab.html). The features are extracted from the DCNN models pre-trained on the image classification task.
 
 Update: remember to change the value of "im_dir" and "im_lists" in data info.
+
+## Note for datasets
+You can download the datasets used in the papers from their owners for research purpose. If you have difficulty, you can refer to [my sharing on BaiduNetDisk](https://pan.baidu.com/s/10rGDziwuQl0fjwDHlhX1dA) with password `b6sv`. We only consider the blur related images in this work.
 
 ## Citation
 
