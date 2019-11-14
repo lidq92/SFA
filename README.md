@@ -12,7 +12,9 @@ Framework: [Caffe](https://github.com/BVLC/caffe/) 1.0 + [MATLAB](https://www.ma
 
 The PLSR model uesd in the test code is trained on [LIVE](http://live.ece.utexas.edu/research/Quality/subjective.htm) gblur images with DMOS (the larger the worse).
 
-Download the ResNet-50-model.caffemodel from https://github.com/KaimingHe/deep-residual-networks and paste it into the directory "models/" before using the code!
+The `ResNet-50-model.caffemodel` is downloaded from [KaimingHe/deep-residual-networks](https://github.com/KaimingHe/deep-residual-networks) and it should be pasted into the directory `models/` before you run the code! 
+It's about 100MB which is too large to upload to this repo.
+If you have difficulty, you can also download the `ResNet-50-model.caffemodel` in [my sharing on BaiduNetDisk](https://pan.baidu.com/s/1T32sYjrQA04kl1auArirxw) with password `u8sd`.
 
 **New!** We provide the [PyTorch](https://pytorch.org) implementation of the method in [SFA-pytorch](./SFA-pytorch/)
 
