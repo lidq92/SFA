@@ -18,13 +18,17 @@ If you have difficulty, you can also download the `ResNet-50-model.caffemodel` i
 
 **New!** We provide the [PyTorch](https://pytorch.org) implementation of the method in [SFA-pytorch](./SFA-pytorch/)
 
-## Note for training
+## Notes
+### Note for training
 All we need to train is a PLSR model, where the training function is `plsregress` in [MATLAB](https://www.mathworks.com/products/matlab.html). The features are extracted from the DCNN models pre-trained on the image classification task.
 
 Update: remember to change the value of "im_dir" and "im_lists" in data info.
 
-## Note for datasets
+### Note for datasets
 You can download the datasets used in the papers from their owners for research purpose. If you have difficulty, you can refer to [my sharing on BaiduNetDisk](https://pan.baidu.com/s/10rGDziwuQl0fjwDHlhX1dA) with password `b6sv`. We only consider the blur related images in this work.
+
+### Note for cross dataset evaluation
+The reported Spearman correlation （SROCC) is multiplied by `-1` when the training and testing datasets have different forms of subjective scores, i.e., one is MOS and the other is DMOS. This is to make sure that the prediction monotonicity is better when SROCC is closer to 1.
 
 ## Citation
 
