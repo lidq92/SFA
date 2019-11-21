@@ -85,7 +85,8 @@ for r = 1:length(databases)
         eval(['predict_statistics2 = [ones(length(test_im_index(:)),1) feature2.' layer_name '(test_im_index, :)]*beta.' layer_name '2;']);
         eval(['predict_statistics3 = [ones(length(test_im_index(:)),1) feature3.' layer_name '(test_im_index, :)]*beta.' layer_name '3;']);
 
-        w1 = 1/3; w2 = 1/3; w3 = 1/3;
+        % w1 = 1/3; w2 = 1/3; w3 = 1/3;
+        w1 = w(1); w2 = w(2); w3 = w(3);
         predict_statistics = w1*predict_statistics1 + w2*predict_statistics2 + w3*predict_statistics3;
     Cross.objective_scores{r,c} = predict_statistics;
 
