@@ -19,9 +19,15 @@ source deactive
 python SFA.py --database=CLIVE
 ```
 ### Remark
-The reported results in the paper are obtained by Caffe framework. Here we only provide a PyTorch implementation of the method.
+https://github.com/lidq92/SFA/issues/5#issuecomment-626077960
+The reported results in the paper are obtained by Caffe framework. Here we only provide a PyTorch implementation of the method as illustration. You should know the major differences between these two versions are the pre-trained model and the corresponding pre-processing step.
+To obtain the results reported in the paper with PyTorch, one should transfer the ResNet-50 Caffemodel weights to PyTorch correctly and use the corresponding pre-processing step.
+**If you want to compare the SFA model in your research, please use the original Caffe+MATLAB version for training and testing in the same settings as yours.**
+
+
  
 TODO:
+- transfer the ResNet-50 Caffemodel weights to PyTorch correctly and use the corresponding pre-processing step.
 - Add more information and details.
 - etc.
 
