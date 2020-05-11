@@ -29,8 +29,15 @@ def OverlappingCropPatches(im, patch_size=224, stride=112):
     patches = ()
     for i in range(0, h - stride, stride):
         for j in range(0, w - stride, stride):
-            patch = to_tensor(im.crop((j, i, j + patch_size, i + patch_size)))
-            patch = normalize(patch, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+            patch = 255.0 * to_tensor(im.crop((j, i, j + patch_size, i + patch_size)))
+
+            patch = torch.index_select(patch, 0, torch.tensor([2, 1, 0])) 
+            patch = normalize(patch, mean=[103.939, 116.779, 123.68], std=[1, 1, 1]) 
+            """
+            Actually, to be more consistent with the Caffe+MATLAB version, 
+            here should be the operation of subtracting the mean image provided by imagenet_mean.binaryproto.
+            """
+
             patches = patches + (patch,)
     return torch.stack(patches)
 
@@ -73,7 +80,7 @@ class IQADataset(Dataset):
 
 class ResNet50(torch.nn.Module):
     """Modified ResNet50 for feature extraction"""
-    def __init__(self, model_path='resnet50.pth'):
+    def __init__(self, model_path='resnet50-caffe.pth'):
         super(ResNet50, self).__init__()
         model = resnet50()
         model.load_state_dict(torch.load(model_path))
@@ -91,8 +98,8 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=19920517)
     parser.add_argument('--database', default='BID', type=str,
                         help='database name (default: BID)')
-    parser.add_argument('--model_path', default='resnet50.pth', type=str,
-                        help='pre-trained ResNet-50 model path (default: resnet50.pth)')
+    parser.add_argument('--model_path', default='resnet50-caffe.pth', type=str,
+                        help='pre-trained ResNet-50 model path (default: resnet50-caffe.pth)')
     parser.add_argument('--less_memory', action='store_true',
                         help='flag whether to use less memory')
     parser.add_argument('--less_gpu_memory', action='store_true',

@@ -15,27 +15,37 @@ source deactive
 
 
 ## Experiments
+Before running the following commands, please copy the corresponding data to `data/`, change `args.im_dir` to your path, and download the transfered models provided in [ruotianluo/pytorch-resnet](https://github.com/ruotianluo/pytorch-resnet): [resnet50-caffe.pth](https://drive.google.com/open?id=0B7fNdx_jAqhtbllXbWxMVEdZclE) and [resnet50.pth](https://drive.google.com/uc?export=download&id=0B7fNdx_jAqhtam1MSTNSYXVYZ2s). For people who cannot access Google drive or the download speed is slow, you can download my backup [here](https://pan.baidu.com/s/1_ZuqGOL2TjPGDUDJfk_hKg) (password: il68).
 ```bash
-python SFA.py --database=CLIVE
+python SFAwithCaffemodelweights.py --database=CLIVE --model_path=resnet50-caffe.pth
+# Output: [ 0.80362151  0.61258695  0.82201323 11.68561182  0.8583691 ]
 ```
-### Remark
-https://github.com/lidq92/SFA/issues/5#issuecomment-626077960
-The reported results in the paper are obtained by Caffe framework. Here we only provide a PyTorch implementation of the method as illustration. You should know the major differences between these two versions are the pre-trained model and the corresponding pre-processing step.
-To obtain the results reported in the paper with PyTorch, one should transfer the ResNet-50 Caffemodel weights to PyTorch correctly and use the corresponding pre-processing step.
-**If you want to compare the SFA model in your research, please use the original Caffe+MATLAB version for training and testing in the same settings as yours.**
 
+```bash
+python SFA.py --database=CLIVE --model_path=resnet50.pth
+# Output: [ 0.80366405  0.61277194  0.8219469  11.68904924  0.8583691 ]
+```
+
+### Remark
+**The reported results in the paper are obtained by Caffe framework**. 
+If you want to compare the SFA model in your research, it would be better to use the original Caffe+MATLAB version for training and testing in the same settings as yours.
+Here we only provide a PyTorch implementation of the method as illustration for researchers who use PyTorch framework and want to improve SFA model. 
+You should know the major differences between the above two versions are the pre-trained model weights and the corresponding pre-processing step.
+
+The provided files correspond to the conference version with minor difference, and the obtained results with PyTorch is slightly worse than the results with Caffe.
 
  
 TODO:
-- transfer the ResNet-50 Caffemodel weights to PyTorch correctly and use the corresponding pre-processing step.
-- Add more information and details.
-- etc.
+- Add adaptive layer selection procedure used in the journal version.
+- Replace line 35 in `SFAwithCaffemodelweights.py` with the mean (ImageNet) image subtracted.
+- Add more information and details, etc.
+
 
 ## Citation
 
 Please cite our papers if it helps your research:
 
-<pre><code>@arcticle{li2018which,
+<pre><code>@arcticle{li2019which,
   title={Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?},
   author={Li, Dingquan and Jiang, Tingting and Lin, Weisi and Jiang, Ming},
   booktitle={IEEE Transactions on Multimedia},
