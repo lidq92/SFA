@@ -15,7 +15,7 @@ source deactive
 
 
 ## Experiments
-Before running the following commands, please copy the corresponding data to `data/`, change `args.im_dir` to your path, and download the transfered models provided in [ruotianluo/pytorch-resnet](https://github.com/ruotianluo/pytorch-resnet): [resnet50-caffe.pth](https://drive.google.com/open?id=0B7fNdx_jAqhtbllXbWxMVEdZclE) and [resnet50.pth](https://drive.google.com/uc?export=download&id=0B7fNdx_jAqhtam1MSTNSYXVYZ2s). For people who cannot access Google drive or the download speed is slow, you can download my backup [here](https://pan.baidu.com/s/1_ZuqGOL2TjPGDUDJfk_hKg) (password: il68).
+Before running the following commands, please copy the corresponding data to `data/`, change `args.im_dir` to your path, and download the transferred models provided in [ruotianluo/pytorch-resnet](https://github.com/ruotianluo/pytorch-resnet): [resnet50-caffe.pth](https://drive.google.com/open?id=0B7fNdx_jAqhtbllXbWxMVEdZclE) and [resnet50.pth](https://drive.google.com/uc?export=download&id=0B7fNdx_jAqhtam1MSTNSYXVYZ2s). For people who cannot access Google drive or the download speed is slow, you can download my backup [here](https://pan.baidu.com/s/1_ZuqGOL2TjPGDUDJfk_hKg) (password: il68).
 ```bash
 python SFAwithCaffemodelweights.py --database=CLIVE --model_path=resnet50-caffe.pth
 # Output: [ 0.80362151  0.61258695  0.82201323 11.68561182  0.8583691 ]
